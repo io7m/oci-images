@@ -13,10 +13,12 @@ LABEL "org.opencontainers.image.url"="https://www.io7m.com/software/oci-images"
 LABEL "org.opencontainers.image.version"="$version"
 
 RUN apk update
-RUN apk add postfix
-RUN apk add opendkim
-RUN apk add runit
+
+RUN apk add ca-certificates-bundle
 RUN apk add dovecot
+RUN apk add opendkim
+RUN apk add postfix
+RUN apk add runit
 RUN apk add supercronic
 
 RUN mkdir /mail
