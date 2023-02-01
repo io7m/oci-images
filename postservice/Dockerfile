@@ -1,6 +1,7 @@
 ARG version
+ARG version_alpine
 
-FROM docker.io/library/alpine:3.16.0
+FROM docker.io/library/alpine:$version_alpine
 
 ENV PATH="/sbin:/bin:/usr/sbin:/usr/bin"
 
