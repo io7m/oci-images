@@ -1,7 +1,9 @@
 ARG version
+ARG version_alpine
+ARG version_jdk
 
-FROM docker.io/library/alpine:3.16.0
-FROM docker.io/library/eclipse-temurin:17.0.3_7-jre-alpine
+FROM docker.io/library/alpine:$version_alpine
+FROM docker.io/library/eclipse-temurin:$version_jdk
 
 ENV PATH="/certusine/bin:/sbin:/bin:/usr/sbin:/usr/bin:/opt/java/openjdk/bin"
 ENV CERTUSINE_HOME="/certusine"
