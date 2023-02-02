@@ -7,6 +7,7 @@ FROM docker.io/library/eclipse-temurin:$version_jdk
 
 ENV PATH="/looseleaf/bin:/sbin:/bin:/usr/sbin:/usr/bin:/opt/java/openjdk/bin"
 ENV LOOSELEAF_HOME="/looseleaf"
+ENV LOOSELEAF_PORT=20000
 
 COPY looseleaf /looseleaf
 
@@ -20,5 +21,7 @@ LABEL "org.opencontainers.image.version"="$version"
 
 VOLUME "/looseleaf/etc"
 VOLUME "/looseleaf/var"
+
+HEALTHCHECK CMD /usr/bin/wget -q -O - http://localhost:${LOOSELEAF_PORT}/health || exit 1
 
 CMD ["/looseleaf/bin/looseleaf"]
