@@ -17,6 +17,7 @@ RUN apk update
 
 RUN apk add ca-certificates-bundle
 RUN apk add dovecot
+RUN apk add dovecot-pop3d
 RUN apk add opendkim
 RUN apk add postfix
 RUN apk add runit
