@@ -20,6 +20,7 @@ RUN apk add dovecot
 RUN apk add dovecot-pop3d
 RUN apk add opendkim
 RUN apk add postfix
+RUN apk add postfix-pcre
 RUN apk add runit
 RUN apk add supercronic
 
