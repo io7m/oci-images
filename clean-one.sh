@@ -18,4 +18,9 @@ shift
 cd "${PROJECT}" ||
   fatal "could not switch to ${PROJECT}"
 
-exec rm -rv $(cat clean.txt)
+FILES=$(cat clean.txt)
+
+if [ ! -z "${FILES}" ]
+then
+  rm -rv ${FILES}
+fi
