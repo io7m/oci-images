@@ -1,0 +1,1 @@
+A mail appliance using [postfix](https://www.postfix.org/), [dovecot](https://www.dovecot.org/), and [OpenDKIM](http://www.opendkim.org/).
