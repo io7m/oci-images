@@ -1,1 +1,0 @@
-The [idstore](https://www.io7m.com/software/idstore/) identity server.

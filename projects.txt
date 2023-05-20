@@ -1,7 +1,6 @@
 artemis
 certusine
 chione
-idstore
 looseleaf
 mesquida
 postservice
