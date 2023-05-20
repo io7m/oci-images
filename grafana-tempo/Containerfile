@@ -1,0 +1,21 @@
+ARG version
+
+FROM scratch
+
+ENV PATH="/tempo/bin:/sbin:/bin:/usr/sbin:/usr/bin"
+
+COPY tempo /tempo
+
+LABEL "org.opencontainers.image.authors"="Mark Raynsford"
+LABEL "org.opencontainers.image.description"="Grafana Tempo"
+LABEL "org.opencontainers.image.source"="https://github.com/grafana/tempo"
+LABEL "org.opencontainers.image.title"="Grafana Tempo"
+LABEL "org.opencontainers.image.url"="https://github.com/grafana/tempo"
+LABEL "org.opencontainers.image.version"="$version"
+
+VOLUME "/tempo/etc"
+VOLUME "/tempo/var"
+
+ENTRYPOINT ["/tempo/bin/tempo"]
+
+CMD ["-config.file", "/tempo/etc/tempo.yml"]
